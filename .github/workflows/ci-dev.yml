@@ -29,4 +29,3 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - run: npm run postinstall --if-present
-      - run: npm test
