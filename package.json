@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "ng build --aot",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master",
     "start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/angular-pwa"
+  },
+  "engines": {
+    "node": "14.17.6",
+    "npm": "6.14.15"
   },
   "private": true,
   "dependencies": {
