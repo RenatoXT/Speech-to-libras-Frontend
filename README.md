@@ -1,27 +1,77 @@
-# SpeechToLibras
+# Speech to Libras<img align="right" height="40" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_228,h_73/http://ftt.com.br/home/wp-content/uploads/2019/10/logo.png">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
 
-## Development server
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#authors">Authors</a></li>
+  </ol>
+</details>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Proposed by [Gabriel Lara Baptista](https://github.com/gabrielbaptista) in the Programming Language IV subject at [*Faculdade de Tecnologia Termomecanica*](http://www.ftt.com.br/).
 
-## Build
+The objective of this project is to create a full stack application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<!-- GETTING STARTED -->
+## Getting Started
+### Prerequisites
+* npm
+* 
+```sh
+npm install
+ng serve
+```
+<br>
 
-## Running unit tests
+### Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repo
+```sh
+git clone https://github.com/RenatoXT/Speech-to-Libras-Frontend
+```
+2. Install NPM packages
+```sh
+npm install
+```
+3. Run the app
+```sh
+ng serve
+```
+1. Enjoy
 
-## Running end-to-end tests
+### Others
+application running on:
+  -  Prod: 
+       https://speech-to-libras.herokuapp.com/
+  -  Staging:
+       https://speech-to-libras-front-staging.herokuapp.com/
+  -  Develop:
+       https://speech-to-libras-front-develop.herokuapp.com/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<!-- Authors -->
+## Authors
 
-## Further help
+Renato Xavier Tavares
+<br>
+Lucas Araújo Veloso
+<br>
+Davi Oliveira Chagas Almeida
+<br>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Project Link: [Speech to Libras Frontend](https://github.com/RenatoXT/Speech-to-Libras-Frontend)
