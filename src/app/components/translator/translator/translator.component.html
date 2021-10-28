@@ -1,0 +1,24 @@
+
+<div class="languages" *ngIf="languages">
+  <input #langsFrom list="langs-from" placeholder="Traduzir de:" />
+  <datalist id="langs-from">
+    <option [value]="item.value" *ngFor="let item of languages.from">
+  </datalist>
+
+  <input #langsTo list="langs-to" placeholder="Traduzir para:"  />
+  <datalist id="langs-to">
+    <option [value]="item.value" *ngFor="let item of languages.to">
+  </datalist>
+
+  <input
+    #translateText
+    type="text"
+    name="translate-text"
+    id="translate-text"
+    placeholder="Traduza um texto..."
+  />
+
+  <button type="submit" (click)="translate(langsFrom.value, langsTo.value, translateText.value)">Traduzir</button>
+</div>
+
+<p *ngIf="translated">Texto traduzido: {{ translated }} </p>
