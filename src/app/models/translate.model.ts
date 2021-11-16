@@ -12,6 +12,7 @@ export interface ITranslateText {
   from: string;
   to: string;
   text: string;
+  libras?: any;
   translated?: string;
   error?: string
 }

@@ -21,4 +21,35 @@
   <button type="submit" (click)="translate(langsFrom.value, langsTo.value, translateText.value)">Traduzir</button>
 </div>
 
-<p *ngIf="translated">Texto traduzido: {{ translated }} </p>
+<div class="translated" *ngIf="translated || libras">
+  <div [ngSwitch]="libras">
+    <p *ngSwitchCase="false">Texto traduzido: {{ translated }} </p>
+
+    <div class="libras-images" *ngSwitchCase="true" >
+      <!-- <figure *ngFor="let img of librasTranslated">
+        <img [src]="sanitizeImg(img)" [alt]="img.name">
+        <figcaption>{{ img.name }}</figcaption>
+      </figure> -->
+      <div class="carousel-container">
+        <input type="radio" name="position" checked />
+        <!-- <input type="radio" name="position" *ngFor="let img of [1, 2, 3, 4].slice(1)"/> -->
+        <input type="radio" name="position" *ngFor="let img of librasTranslated.slice(1)"/>
+        <div id="carousel">
+          <div class="item" *ngFor="let img of librasTranslated">
+            <!-- <figure>
+              <img  [alt]="img">
+              <figcaption>{{ img }}</figcaption>
+            </figure> -->
+            <figure>
+              <img [src]="sanitizeImg(img)" [alt]="img.name">
+              <figcaption>{{ img.name }}</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div *ngSwitchDefault>DEU RUIM</div>
+  </div>
+</div>
+

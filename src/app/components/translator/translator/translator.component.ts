@@ -5,6 +5,17 @@ import {
   ITranslateText,
 } from './../../../models/translate.model';
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from "@angular/platform-browser"
+
+interface ILibrasResponse {
+  data: any,
+  encoding: string,
+  md5: string,
+  mimetype: string,
+  name: string,
+  size: number,
+  _id: string
+}
 
 @Component({
   selector: 'app-translator',
@@ -15,8 +26,10 @@ export class TranslatorComponent implements OnInit {
   translated: string = "";
   loading: boolean = false;
   languages: any;
+  libras = false;
+  librasTranslated: any;
 
-  constructor(private _service: TranslateService) {}
+  constructor(private _service: TranslateService, private _sanitization: DomSanitizer) {}
 
   async ngOnInit() {
     await this.getLanguages();
@@ -50,10 +63,21 @@ export class TranslatorComponent implements OnInit {
           return result;
         });
 
-        this.translated = result.translated || "";
+
+        if ( result.libras ) {
+          // this.translated = result.libras.translation.flat(1);
+          this.librasTranslated = result.translated;
+          this.libras = true;
+        } else {
+
+          this.translated = result.translated || "";
+        }
 
         console.log({
           origin: "TranslatorComponent",
+          libras: this.libras,
+          result,
+          librasTranslated: this.librasTranslated,
           translated: this.translated,
           loading: this.loading,
           languages: this.languages,
@@ -79,6 +103,13 @@ export class TranslatorComponent implements OnInit {
 
     }
 
+  }
+
+  public sanitizeImg(img: ILibrasResponse) {
+    const src = 'data:' + img.mimetype + ';charset=utf-8;' + img.encoding + ',' + img.data;
+
+    const sanitezed = this._sanitization.bypassSecurityTrustUrl(src);
+    return sanitezed;
   }
 
   private toggleLoading(value?: boolean): boolean {
