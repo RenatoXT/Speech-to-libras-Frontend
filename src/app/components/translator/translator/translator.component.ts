@@ -29,6 +29,15 @@ export class TranslatorComponent implements OnInit {
   libras = false;
   librasTranslated: any;
 
+  // TODO tratamento de erro
+  // TODO Layout geral
+  // TODO Criação da tela de usuário
+  // TODO add JWT
+  // TODO integração com o endpoint do usuário
+  // TODO configurar o manifest
+  // TODO criar logo da aplicação
+  // TODO testes
+
   constructor(private _service: TranslateService, private _sanitization: DomSanitizer) {}
 
   async ngOnInit() {
