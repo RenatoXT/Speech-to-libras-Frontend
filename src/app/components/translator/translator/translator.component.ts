@@ -73,16 +73,6 @@ export class TranslatorComponent implements OnInit {
           this.translated = result.translated || "";
         }
 
-        console.log({
-          origin: "TranslatorComponent",
-          libras: this.libras,
-          result,
-          librasTranslated: this.librasTranslated,
-          translated: this.translated,
-          loading: this.loading,
-          languages: this.languages,
-        })
-
         if (result.error) {
           throw result.error
         }
@@ -99,7 +89,7 @@ export class TranslatorComponent implements OnInit {
 
       this.translated = err.message;
 
-      console.log(err);
+      console.error(err);
 
     }
 
