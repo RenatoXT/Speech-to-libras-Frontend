@@ -1,0 +1,110 @@
+.carousel-container {
+  height: 400px;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 500px 100px;
+  grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+  align-items: center;
+  justify-items: center;
+
+ .carousel {
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 5;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none;
+
+    .item {
+
+        position: absolute;
+        width: 15rem;
+        height: 20rem;
+        --r: calc(var(--position) - var(--offset));
+        --abs: max(calc(var(--r) * -1), var(--r));
+        transition: all 0.25s linear;
+        transform: rotateY(calc(-10deg * var(--r)))
+          translateX(calc(-300px * var(--r)));
+        z-index: calc((var(--position) - var(--abs)));
+        figure {
+
+          width: auto;
+          text-align: center;
+          height: inherit;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      @for $item from 1 through 100{
+        div.item:nth-of-type(#{$item}) {
+          --offset: $item;
+        }
+      }
+      @for $item2 from 1 through 100{
+        input:nth-of-type(#{$item2}) {
+          grid-column: ($item2 + 1) / ($item2 + 2);
+          grid-row: 2 / 3;
+        }
+        input:nth-of-type(#{$item2}):checked ~ div#carousel {
+          --position: $item2;
+        }
+
+      }
+  }
+
+
+
+}
+.languages{
+  border-style: none;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: center;
+
+}
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  text-align: center;
+}
+.langs-from-label{
+  color: white;
+}
+
+
+.backText{
+  background-color:white;
+
+}
+
+.inputlangs-style {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: transparent;
+}
+.langs-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin-bottom: 1.5rem;
+}
+.traduzir-botao-container{
+  display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+   width: 58.5%;
+}
