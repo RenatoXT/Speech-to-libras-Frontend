@@ -67,15 +67,6 @@
   padding: 10px;
   text-align: center;
 }
-.langs-from-label{
-  color: white;
-}
-
-
-.backText{
-  background-color:white;
-
-}
 
 .inputlangs-style {
   display: flex;
@@ -94,6 +85,29 @@
   display: flex;
     flex-direction: column;
     align-items: flex-end;
-   width: 58.5%;
+   width: 70%;
+   max-width: 550px;
+
+}
+
+#botaoTraduzir {
+  background-color: #054F77;
+  border-color: #054F77;
+
+  font-weight: bold;
+}
+
+.spinner-wrapper {
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+
+  .spinner {
+    background: url(../../../../assets/spinner/spinner.svg) no-repeat center center fixed;
+    position: fixed;
+    inset: 0;
+  }
 }
 

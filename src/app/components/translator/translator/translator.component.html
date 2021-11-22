@@ -1,11 +1,6 @@
+<h1 class="center" > SPEECH TO LIBRAS </h1>
 
-<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-
-<h1 class="center" style="border-style:none; color:white" > SPEECH TO LIBRAS </h1>
-
-<div style="border-style: none" class="languages center"  *ngIf="languages">
+<div class="languages center"  *ngIf="languages">
   <div class="langs-container">
   <div class="traduzir-de-container inputlangs-style">
     <label for="traduzirde" class="langs-from-label">Traduzir de: </label>
@@ -57,3 +52,6 @@
   </div>
 </div>
 
+<div class="spinner-wrapper" *ngIf="loading">
+  <div class="spinner"></div>
+</div>
