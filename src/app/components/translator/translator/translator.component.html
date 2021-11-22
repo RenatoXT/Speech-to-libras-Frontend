@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 <div class="languages" *ngIf="languages">
   <input #langsFrom list="langs-from" placeholder="Traduzir de:" />
@@ -17,11 +18,43 @@
     id="translate-text"
     placeholder="Traduza um texto..."
   />
+=======
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<h1 class="center" style="border-style:none; color:white"> SPEECH TO LIBRAS </h1>
+
+<div style="border-style: none" class="languages center" *ngIf="languages">
+    <div class="langs-container">
+        <div class="traduzir-de-container inputlangs-style">
+            <label for="traduzirde" class="langs-from-label">Traduzir de: </label>
+            <input id="traduzirde" class="backText rounded" #langsFrom list="langs-from" />
+            <datalist id="langs-from">
+      <option [value]="item.value" *ngFor="let item of languages.from">
+    </datalist>
+        </div>
+
+        <div class="traduzir-para-container inputlangs-style">
+            <label for="traduzirpara" class="langs-from-label">Traduzir para: </label>
+            <input id="traduzirpara" class="backText rounded" #langsTo list="langs-to" />
+            <datalist id="langs-to">
+    <option [value]="item.value" *ngFor="let item of languages.to">
+  </datalist>
+        </div>
+
+    </div>
+    <div class="traduzir-botao-container center">
+        <textarea for="botaoTraduzir" style="width: 100%;" class="backText" maxlength="80" #translateText type="text" rows="5" cols="50" name="translate-text" id="translate-text" placeholder="Traduza um texto..."></textarea>
+        <button id="botaoTraduzir" type="submit" class="btn btn-info" style="margin-top: 2rem;" (click)="translate(langsFrom.value, langsTo.value, translateText.value)">Traduzir</button>
+    </div>
+>>>>>>> Stashed changes
 
   <button type="submit" (click)="translate(langsFrom.value, langsTo.value, translateText.value)">Traduzir</button>
 </div>
 
 <div class="translated" *ngIf="translated || libras">
+<<<<<<< Updated upstream
   <div [ngSwitch]="libras">
     <p *ngSwitchCase="false">Texto traduzido: {{ translated }} </p>
 
@@ -48,8 +81,26 @@
         </div>
       </div>
 
-    </div>
-    <div *ngSwitchDefault>DEU RUIM</div>
-  </div>
-</div>
+=======
+    <div [ngSwitch]="libras">
+        <p></p>
+        <h5 *ngSwitchCase="false" class="hadow-lg p-3 mb-5 bg-white rounded center" style="width: fit-content;">Texto traduzido: {{ translated }} </h5>
 
+        <div class="libras-images" *ngSwitchCase="true">
+            <div class="carousel-container" [style]="'--qtde: ' + librasTranslated.length">
+                <input type="radio" name="position" checked />
+                <input type="radio" name="position" *ngFor="let img of librasTranslated.slice(1)" />
+                <div id="carousel">
+                    <div class="item" *ngFor="let img of librasTranslated">
+                        <figure>
+                            <img [src]="sanitizeImg(img)" [alt]="img.name">
+                            <figcaption>{{ img.name }}</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngSwitchDefault>DEU RUIM</div>
+>>>>>>> Stashed changes
+    </div>
+</div>
