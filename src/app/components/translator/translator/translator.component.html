@@ -25,7 +25,7 @@
 
   </div>
   <div class="traduzir-botao-container center">
-    <textarea for="botaoTraduzir" style="width: 100%;" class="backText" #translateText type="text" rows="5" cols="50" name="translate-text" id="translate-text" placeholder="Traduza um texto..." ></textarea>
+    <textarea for="botaoTraduzir" style="width: 100%;" class="backText" maxlength="250" #translateText type="text" rows="5" cols="50" name="translate-text" id="translate-text" placeholder="Traduza um texto..." ></textarea>
     <button id="botaoTraduzir" type="submit" class="btn btn-info" style="margin-top: 2rem;"
       (click)="translate(langsFrom.value, langsTo.value, translateText.value)">Traduzir</button>
   </div>
@@ -36,9 +36,9 @@
     <p *ngSwitchCase="false">Texto traduzido: {{ translated }} </p>
 
     <div class="libras-images" *ngSwitchCase="true">
-      <div class="carousel-container">
-        <input type="radio" name="position" checked />
-        <input type="radio" name="position" *ngFor="let img of librasTranslated.slice(1)" />
+      <div class="carousel-container" [style]="'--qtde: ' + librasTranslated.length">
+          <input type="radio" name="position" checked />
+          <input type="radio" name="position" *ngFor="let img of librasTranslated.slice(1)" />
         <div id="carousel">
           <div class="item" *ngFor="let img of librasTranslated">
             <figure>
@@ -48,7 +48,6 @@
           </div>
         </div>
       </div>
-
     </div>
     <div *ngSwitchDefault>DEU RUIM</div>
   </div>

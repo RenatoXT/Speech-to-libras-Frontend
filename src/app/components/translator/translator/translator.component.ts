@@ -69,7 +69,7 @@ export class TranslatorComponent implements OnInit {
           this.librasTranslated = result.translated;
           this.libras = true;
         } else {
-
+          this.libras = false;
           this.translated = result.translated || "";
         }
 
