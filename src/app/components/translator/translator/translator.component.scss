@@ -40,7 +40,7 @@
 
   }
 
-  @for $i from 1 through 40 {
+  @for $i from 1 through 30 {
     input:nth-of-type(#{$i}):checked ~ #carousel {
       --position: #{$i};
     }
