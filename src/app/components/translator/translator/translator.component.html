@@ -38,9 +38,13 @@
     <div class="libras-images" *ngSwitchCase="true">
       <div class="carousel-container" [style]="'--qtde: ' + librasTranslated.length">
           <input type="radio" name="position" checked />
-          <input type="radio" name="position" *ngFor="let img of librasTranslated.slice(1)" />
+          <input
+            type="radio"
+            name="position"
+            *ngFor="let img of librasTranslated.slice(1); let radioIndex = index"
+          />
         <div id="carousel">
-          <div class="item" *ngFor="let img of librasTranslated">
+          <div class="item" *ngFor="let img of librasTranslated; let imgIndex = index" [style]="'--offset: ' + (imgIndex + 1)">
             <figure>
               <img [src]="sanitizeImg(img)" [alt]="img.name">
               <figcaption>{{ img.name }}</figcaption>

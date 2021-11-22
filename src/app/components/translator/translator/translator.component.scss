@@ -27,13 +27,6 @@
         translateX(calc(-15rem * var(--r)));
       z-index: calc((var(--position) - var(--abs)));
 
-
-      @for $i from 1 through 40 {
-        &:nth-of-type(#{$i}) {
-          --offset: #{$i};
-        }
-      }
-
       figure {
         width: auto;
         text-align: center;
