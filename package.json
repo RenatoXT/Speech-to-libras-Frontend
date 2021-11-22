@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "ng build",
+    "postinstall": "ng build -aot",
     "deploy": "git add . && git commit -m Heroku && git push heroku master",
     "start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/angular-pwa"
   },
