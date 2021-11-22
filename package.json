@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "ng build -aot",
+    "postinstall": "ng build --aot",
     "deploy": "git add . && git commit -m Heroku && git push heroku master",
     "start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/angular-pwa"
   },
@@ -17,9 +17,9 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/build-angular": "^12.2.13",
+    "@angular-devkit/build-angular": "~12.2.11",
     "@angular/animations": "~12.2.0",
-    "@angular/cli": "^12.2.13",
+    "@angular/cli": "~12.2.11",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/compiler-cli": "~12.2.0",

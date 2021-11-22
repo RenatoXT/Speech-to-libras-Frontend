@@ -1,4 +1,4 @@
-name: CI for staging environment
+name: CI STAGING
 
 on:
   push:
