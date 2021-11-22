@@ -25,7 +25,7 @@
 
   </div>
   <div class="traduzir-botao-container center">
-    <textarea for="botaoTraduzir" style="width: 100%;" class="backText" maxlength="80" #translateText type="text" rows="5" cols="50" name="translate-text" id="translate-text" placeholder="Traduza um texto..." ></textarea>
+    <textarea for="botaoTraduzir" style="width: 100%;" class="backText" maxlength="40" #translateText type="text" rows="5" cols="50" name="translate-text" id="translate-text" placeholder="Traduza um texto..." ></textarea>
     <button id="botaoTraduzir" type="submit" class="btn btn-info" style="margin-top: 2rem;"
       (click)="translate(langsFrom.value, langsTo.value, translateText.value)">Traduzir</button>
   </div>
